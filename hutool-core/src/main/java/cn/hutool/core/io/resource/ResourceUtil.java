@@ -1,5 +1,11 @@
 package cn.hutool.core.io.resource;
 
+import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.collection.EnumerationIter;
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.io.IORuntimeException;
+import cn.hutool.core.util.ClassLoaderUtil;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,12 +13,6 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.Enumeration;
 import java.util.List;
-
-import cn.hutool.core.collection.CollectionUtil;
-import cn.hutool.core.collection.EnumerationIter;
-import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.io.IORuntimeException;
-import cn.hutool.core.util.ClassLoaderUtil;
 
 /**
  * ClassPath资源工具类
@@ -76,13 +76,13 @@ public class ResourceUtil {
 	/**
 	 * 从ClassPath资源中获取{@link BufferedReader}
 	 * 
-	 * @param resurce ClassPath资源
+	 * @param resource ClassPath资源
 	 * @param charset 编码
 	 * @return {@link InputStream}
 	 * @since 3.1.2
 	 */
-	public static BufferedReader getReader(String resurce, Charset charset) {
-		return new ClassPathResource(resurce).getReader(charset);
+	public static BufferedReader getReader(String resource, Charset charset) {
+		return new ClassPathResource(resource).getReader(charset);
 	}
 
 	/**
